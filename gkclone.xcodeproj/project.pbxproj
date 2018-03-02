@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		309F1F96204992400067429C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1F95204992400067429C /* main.cpp */; };
+		309F1F9E2049924B0067429C /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1F9C2049924B0067429C /* entity.cpp */; };
+		309F1FA12049940F0067429C /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1F9F2049940F0067429C /* component.cpp */; };
+		309F1FA4204994D80067429C /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1FA2204994D80067429C /* system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		309F1F92204992400067429C /* gkclone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gkclone; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F1F95204992400067429C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		309F1F9C2049924B0067429C /* entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = entity.cpp; sourceTree = "<group>"; };
+		309F1F9D2049924B0067429C /* entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = entity.hpp; sourceTree = "<group>"; };
+		309F1F9F2049940F0067429C /* component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = component.cpp; sourceTree = "<group>"; };
+		309F1FA02049940F0067429C /* component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
+		309F1FA2204994D80067429C /* system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system.cpp; sourceTree = "<group>"; };
+		309F1FA3204994D80067429C /* system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				309F1F95204992400067429C /* main.cpp */,
+				309F1F9C2049924B0067429C /* entity.cpp */,
+				309F1F9D2049924B0067429C /* entity.hpp */,
+				309F1F9F2049940F0067429C /* component.cpp */,
+				309F1FA02049940F0067429C /* component.hpp */,
+				309F1FA2204994D80067429C /* system.cpp */,
+				309F1FA3204994D80067429C /* system.hpp */,
 			);
 			path = gkclone;
 			sourceTree = "<group>";
@@ -119,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309F1FA4204994D80067429C /* system.cpp in Sources */,
+				309F1F9E2049924B0067429C /* entity.cpp in Sources */,
 				309F1F96204992400067429C /* main.cpp in Sources */,
+				309F1FA12049940F0067429C /* component.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

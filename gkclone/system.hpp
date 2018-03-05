@@ -28,7 +28,11 @@ public:
 		components.emplace_back(c);
 	}
 	
-	void removeComponent(T* c) {
-		
+	void removeComponent(T* toBeRemoved) {
+		auto it = std::remove_if(components.begin(), components.end(), [&](auto c)
+								 {
+									 return c == toBeRemoved;
+								 });
+		components.erase(it);
 	}
 };

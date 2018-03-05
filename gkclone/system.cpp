@@ -14,4 +14,3 @@ void SystemBase::update(double dt) {
 		c->update(dt);
 	}
 }
-

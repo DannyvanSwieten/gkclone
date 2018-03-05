@@ -9,7 +9,7 @@
 #include <iostream>
 #include "component.hpp"
 #include "entity.hpp"
-#include "system.hpp"
+#include "script_system.hpp"
 
 class RigidBody: public Component {
 public:
@@ -37,11 +37,31 @@ public:
 };
 
 int main(int argc, const char * argv[]) {
+	
+	const char* source = R"(
+	
+	local SomeThing = {
+		Properties = {
+			name = "SomeThing",
+			x = 10,
+			y = 15
+		}
+	}
+	
+	return SomeThing
+	)";
 
+	lua_State* state = luaL_newstate();
+	
 	Entity e;
 	RigidBody b(e);
-	PhysicsSystem s;
-	e.addComponent(&b);
+	PhysicsSystem ps;
+	ScriptSystem ss;
+	Script script(e, state);
+	script.loadScript(source);
+	ss.addComponent(&script);
+	ps.addComponent(&b);
 	
+	ss.update(1.0 / 60);
 	return 0;
 }

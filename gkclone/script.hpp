@@ -28,5 +28,7 @@ private:
 	
 	lua_State* state = nullptr;
 	luabridge::LuaRef self;
+    luabridge::LuaRef updateFunction;
+    luabridge::LuaRef initFunction;
 	std::unordered_map<std::string, luabridge::LuaRef> properties;
 };

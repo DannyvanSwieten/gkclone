@@ -40,18 +40,25 @@ int main(int argc, const char * argv[]) {
 	
 	const char* source = R"(
 	
-	local SomeThing = {
+	local Self = {
 		Properties = {
-			name = "SomeThing",
+			name = "Pokemonslippers",
 			x = 10,
 			y = 15
 		}
 	}
+    
+    function update()
+        print(self.x)
+        print(self.y)
+        print(self.name)
+    end
 	
-	return SomeThing
+	return Self
 	)";
 
 	lua_State* state = luaL_newstate();
+    luaL_openlibs(state);
 	
 	Entity e;
 	RigidBody b(e);

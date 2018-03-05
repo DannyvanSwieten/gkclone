@@ -12,24 +12,27 @@
 #include <iostream>
 
 Script::Script(Entity &entity, lua_State* state): Component(entity, Script::type_id),
-state(state), self(state) {
+state(state), self(state), updateFunction(state), initFunction(state) {
 	
 	if(!state)
 		return;
 	
-//	self = luabridge::newTable(state);
-//	self["enityId"] = entity;
+    self = luabridge::newTable(state);
 }
 
 
 void Script::update(double dt) { 
-    
+    luabridge::setGlobal(state, self, "self");
+    updateFunction();
 }
 
 void Script::loadScript(const std::string &source) { 
 	int result = luaL_dostring(state, source.c_str());
 	if(result)
 		return;
+    
+    initFunction = luabridge::getGlobal(state, "init");
+    updateFunction = luabridge::getGlobal(state, "update");
 	
 	luabridge::LuaRef table(state);
 	table.pop(state);
@@ -45,5 +48,9 @@ void Script::loadScript(const std::string &source) {
 	}
 	
 	lua_pop(state, 1); // pop table
+    
+    for(auto p: properties) {
+        self[p.first] = p.second;
+    }
 }
 

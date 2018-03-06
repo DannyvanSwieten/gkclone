@@ -13,6 +13,10 @@
 		309F1F9E2049924B0067429C /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1F9C2049924B0067429C /* entity.cpp */; };
 		309F1FA12049940F0067429C /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1F9F2049940F0067429C /* component.cpp */; };
 		309F1FA4204994D80067429C /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F1FA2204994D80067429C /* system.cpp */; };
+		30AEFE29204EA80A004B5E00 /* script_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30AEFE27204EA80A004B5E00 /* script_context.cpp */; };
+		30AEFE2D204EB551004B5E00 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30AEFE2B204EB551004B5E00 /* engine.cpp */; };
+		30AEFE30204EBA95004B5E00 /* rigid_body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30AEFE2E204EBA95004B5E00 /* rigid_body.cpp */; };
+		30AEFE34204EDF1E004B5E00 /* physics_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30AEFE32204EDF1E004B5E00 /* physics_system.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +44,15 @@
 		309F1FA02049940F0067429C /* component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
 		309F1FA2204994D80067429C /* system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system.cpp; sourceTree = "<group>"; };
 		309F1FA3204994D80067429C /* system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system.hpp; sourceTree = "<group>"; };
+		30AEFE27204EA80A004B5E00 /* script_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = script_context.cpp; sourceTree = "<group>"; };
+		30AEFE28204EA80A004B5E00 /* script_context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = script_context.hpp; sourceTree = "<group>"; };
+		30AEFE2B204EB551004B5E00 /* engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
+		30AEFE2C204EB551004B5E00 /* engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
+		30AEFE2E204EBA95004B5E00 /* rigid_body.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rigid_body.cpp; sourceTree = "<group>"; };
+		30AEFE2F204EBA95004B5E00 /* rigid_body.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rigid_body.hpp; sourceTree = "<group>"; };
+		30AEFE32204EDF1E004B5E00 /* physics_system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = physics_system.cpp; sourceTree = "<group>"; };
+		30AEFE33204EDF1E004B5E00 /* physics_system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = physics_system.hpp; sourceTree = "<group>"; };
+		30AEFE36204EFDD3004B5E00 /* components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = components.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,16 +88,41 @@
 				309F1F95204992400067429C /* main.cpp */,
 				309F1F9C2049924B0067429C /* entity.cpp */,
 				309F1F9D2049924B0067429C /* entity.hpp */,
-				309F1F9F2049940F0067429C /* component.cpp */,
-				309F1FA02049940F0067429C /* component.hpp */,
+				30AEFE35204EDFB4004B5E00 /* components */,
+				30AEFE31204EDF01004B5E00 /* systems */,
+				30AEFE27204EA80A004B5E00 /* script_context.cpp */,
+				30AEFE28204EA80A004B5E00 /* script_context.hpp */,
+				30AEFE2B204EB551004B5E00 /* engine.cpp */,
+				30AEFE2C204EB551004B5E00 /* engine.hpp */,
+			);
+			path = gkclone;
+			sourceTree = "<group>";
+		};
+		30AEFE31204EDF01004B5E00 /* systems */ = {
+			isa = PBXGroup;
+			children = (
 				309F1FA2204994D80067429C /* system.cpp */,
 				309F1FA3204994D80067429C /* system.hpp */,
 				308E961B204D7DF400E4225B /* script_system.cpp */,
 				308E961C204D7DF400E4225B /* script_system.hpp */,
+				30AEFE32204EDF1E004B5E00 /* physics_system.cpp */,
+				30AEFE33204EDF1E004B5E00 /* physics_system.hpp */,
+			);
+			path = systems;
+			sourceTree = "<group>";
+		};
+		30AEFE35204EDFB4004B5E00 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				309F1F9F2049940F0067429C /* component.cpp */,
+				309F1FA02049940F0067429C /* component.hpp */,
 				308E961E204D7E3A00E4225B /* script.cpp */,
 				308E961F204D7E3A00E4225B /* script.hpp */,
+				30AEFE2E204EBA95004B5E00 /* rigid_body.cpp */,
+				30AEFE2F204EBA95004B5E00 /* rigid_body.hpp */,
+				30AEFE36204EFDD3004B5E00 /* components.hpp */,
 			);
-			path = gkclone;
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,11 +183,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				308E9620204D7E3A00E4225B /* script.cpp in Sources */,
+				30AEFE2D204EB551004B5E00 /* engine.cpp in Sources */,
 				309F1FA4204994D80067429C /* system.cpp in Sources */,
 				309F1F9E2049924B0067429C /* entity.cpp in Sources */,
 				308E961D204D7DF400E4225B /* script_system.cpp in Sources */,
 				309F1F96204992400067429C /* main.cpp in Sources */,
+				30AEFE34204EDF1E004B5E00 /* physics_system.cpp in Sources */,
 				309F1FA12049940F0067429C /* component.cpp in Sources */,
+				30AEFE30204EBA95004B5E00 /* rigid_body.cpp in Sources */,
+				30AEFE29204EA80A004B5E00 /* script_context.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +308,10 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1z",
+				);
 				OTHER_LDFLAGS = "-llua";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -278,6 +324,10 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1z",
+				);
 				OTHER_LDFLAGS = "-llua";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

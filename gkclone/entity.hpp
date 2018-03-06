@@ -10,7 +10,7 @@
 
 #include <vector>
 
-#include "component.hpp"
+#include "components.hpp"
 
 class Entity {
 public:
@@ -30,6 +30,20 @@ public:
 		}
 		
 		return nullptr;
+	}
+	
+	template<typename T>
+	std::vector<T*> getAll() {
+		
+		std::vector<T*> all;
+		
+		for(auto c: components) {
+			auto tid = T::type_id;
+			if(c->reflection_id == tid)
+				all.emplace_back( static_cast<T*>(c) );
+		}
+		
+		return all;
 	}
 	
 private:

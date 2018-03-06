@@ -8,6 +8,8 @@
 
 #include "component.hpp"
 
+#include "entity.hpp"
+
 Component::Component(Entity& entity, size_t reflectionId): entity(entity), reflection_id(reflectionId) {
-	
+	entity.addComponent(this);
 }

@@ -11,14 +11,12 @@
 #include <vector>
 
 class Component;
+class Entity;
 
 class SystemBase {
 public:
-	void update(double dt);
-	
-protected:
-	
-	std::vector<Component*> components;
+	virtual void update(double dt) = 0;
+	virtual Component* createInstance(Entity& e) = 0;
 };
 
 template<typename T>
@@ -35,4 +33,8 @@ public:
 								 });
 		components.erase(it);
 	}
+	
+protected:
+	
+	std::vector<T> components;
 };

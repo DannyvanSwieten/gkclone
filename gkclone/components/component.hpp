@@ -31,6 +31,7 @@ constexpr size_t hash(const char* const str)
 }
 
 class Entity;
+
 class Component {
 public:
 	Component(Entity& entity, size_t reflectionId);

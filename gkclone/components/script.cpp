@@ -52,5 +52,7 @@ void Script::loadScript(const std::string &source) {
     for(auto p: properties) {
         self[p.first] = p.second;
     }
+	
+	self["entity"] = &entity;
 }
 
